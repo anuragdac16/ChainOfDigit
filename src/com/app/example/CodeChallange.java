@@ -6,21 +6,20 @@ import java.util.List;
 
 public class CodeChallange {
 
-	public  int numberOfChain(int number) {
+	public int numberOfChain(int number) {
 		List<Integer> list = new ArrayList<>();
 		int chain = 1;
 		int descendingNumber = sortNumberInDesendingOrder(number);
 		int ascendingNumber = sortNumberInAsendingOrder(number);
 		while (true) {
 			int result = descendingNumber - ascendingNumber;
-			
+
 			descendingNumber = sortNumberInDesendingOrder(result);
 			ascendingNumber = sortNumberInAsendingOrder(result);
 			if (!list.contains(result)) {
 				chain++;
 				list.add(result);
-			}
-			else
+			} else
 				break;
 		}
 
@@ -52,7 +51,6 @@ public class CodeChallange {
 		return number;
 	}
 
-	
 	public int sortNumberInAsendingOrder(int number) {
 		Integer number1 = new Integer(number);
 		String num = number1.toString();
@@ -75,10 +73,9 @@ public class CodeChallange {
 		return number;
 	}
 
-	
 	public static void main(String[] args) {
 		CodeChallange challange = new CodeChallange();
-		int result= challange.numberOfChain(444);
+		int result = challange.numberOfChain(444);
 		System.out.println(result);
 	}
 

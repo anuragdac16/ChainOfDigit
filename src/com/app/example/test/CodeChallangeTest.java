@@ -22,7 +22,7 @@ public class CodeChallangeTest {
 		Assert.assertEquals(2, codeChallange.numberOfChain(444));
 		Assert.assertEquals(4, codeChallange.numberOfChain(1234));
 	}
-	
+
 	@Test
 	public void testSortNumberInAsendingOrder() {
 		Assert.assertEquals(1234, codeChallange.sortNumberInAsendingOrder(2314));
