@@ -1,9 +1,7 @@
 package com.app.example;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 public class CodeChallange {
@@ -39,22 +37,6 @@ public class CodeChallange {
 
 	}
 
-	public void printDetail() {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Enter number		:	");
-		int number = scan.nextInt();
-		
-		System.out.println(sortNumberInDesendingOrder(number) + " - " + sortNumberInAsendingOrder(number) + " = " + (sortNumberInDesendingOrder(number) - sortNumberInAsendingOrder(number)));
-		
-		Set<Integer> set = numberOfChain(number);
-		Iterator<Integer> itr = set.iterator();
-		while (itr.hasNext()) {
-			Integer integer = (Integer) itr.next();
-			System.out.println(sortNumberInDesendingOrder(integer) + " - " + sortNumberInAsendingOrder(integer) + " = " + (sortNumberInDesendingOrder(integer) - sortNumberInAsendingOrder(integer)));
-		}
-		System.out.println("chain length	:	" + (set.size() + 1));
-
-		scan.close();
-	}
+	
 
 }
