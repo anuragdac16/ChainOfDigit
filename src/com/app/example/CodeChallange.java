@@ -3,6 +3,7 @@ package com.app.example;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class CodeChallange {
 
@@ -29,20 +30,12 @@ public class CodeChallange {
 	public int sortNumberInDesendingOrder(int number) {
 		Integer number1 = new Integer(number);
 		String num = number1.toString();
-		char[] ch = new char[num.length()];
+		char[] ch = num.toCharArray();
 		String str = "";
-
-		for (int i = 0; i < num.length(); i++) {
-			ch[i] = num.charAt(i);
-
-		}
 
 		Arrays.sort(ch);
 
-		for (int i = 0; i < ch.length; i++) {
-			str = str + ch[i];
-		}
-
+		str = String.copyValueOf(ch);
 		StringBuffer buff = new StringBuffer(str);
 		buff.reverse();
 		str = new String(buff);
@@ -54,19 +47,12 @@ public class CodeChallange {
 	public int sortNumberInAsendingOrder(int number) {
 		Integer number1 = new Integer(number);
 		String num = number1.toString();
-		char[] ch = new char[num.length()];
+		char[] ch = num.toCharArray();
 		String str = "";
-
-		for (int i = 0; i < num.length(); i++) {
-			ch[i] = num.charAt(i);
-
-		}
 
 		Arrays.sort(ch);
 
-		for (int i = 0; i < ch.length; i++) {
-			str = str + ch[i];
-		}
+		str = String.copyValueOf(ch);
 
 		number = Integer.parseInt(str);
 
@@ -75,8 +61,12 @@ public class CodeChallange {
 
 	public static void main(String[] args) {
 		CodeChallange challange = new CodeChallange();
-		int result = challange.numberOfChain(444);
-		System.out.println(result);
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter number		:	");
+		int number = scan.nextInt();
+		System.out.println("Number of chain 	:	"+challange.numberOfChain(number));
+		
+		scan.close();
 	}
 
 }
