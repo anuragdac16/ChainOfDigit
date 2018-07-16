@@ -1,41 +1,37 @@
 package com.app.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CodeChallange {
 
 	public int numberOfChain(int number) {
-		List<Integer> list = new ArrayList<>();
-		int chain = 1;
+		Set<Integer> set = new HashSet<>();
+		int chain = set.size() -1;
 		int descendingNumber = sortNumberInDesendingOrder(number);
 		int ascendingNumber = sortNumberInAsendingOrder(number);
-		while (true) {
+		
+		while (!(set.size() == chain)) {
 			int result = descendingNumber - ascendingNumber;
-
 			descendingNumber = sortNumberInDesendingOrder(result);
 			ascendingNumber = sortNumberInAsendingOrder(result);
-			if (!list.contains(result)) {
-				chain++;
-				list.add(result);
-			} else
-				break;
+			chain++;
+			set.add(result);
+			
 		}
 
-		return chain;
+		return set.size()+1;
 	}
 
 	public int sortNumberInDesendingOrder(int number) {
 		Integer number1 = new Integer(number);
 		String num = number1.toString();
 		char[] ch = num.toCharArray();
-		String str = "";
 
 		Arrays.sort(ch);
 
-		str = String.copyValueOf(ch);
+		String str = String.copyValueOf(ch);
 		StringBuffer buff = new StringBuffer(str);
 		buff.reverse();
 		str = new String(buff);
@@ -48,25 +44,12 @@ public class CodeChallange {
 		Integer number1 = new Integer(number);
 		String num = number1.toString();
 		char[] ch = num.toCharArray();
-		String str = "";
-
 		Arrays.sort(ch);
-
-		str = String.copyValueOf(ch);
-
+		String str = String.copyValueOf(ch);
 		number = Integer.parseInt(str);
 
 		return number;
 	}
 
-	public static void main(String[] args) {
-		CodeChallange challange = new CodeChallange();
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Enter number		:	");
-		int number = scan.nextInt();
-		System.out.println("Number of chain 	:	"+challange.numberOfChain(number));
-		
-		scan.close();
-	}
-
+	
 }
