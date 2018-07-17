@@ -30,9 +30,9 @@ public class CodeChallangeTest {
 
 	
 		Assert.assertNotNull(codeChallange.numberOfChain(1234));
-		Assert.assertEquals(2, (codeChallange.numberOfChain(123456789).size()+1));
-		Assert.assertEquals(2, (codeChallange.numberOfChain(444).size()+1));
-		Assert.assertEquals(4, (codeChallange.numberOfChain(1234).size()+1));
+		Assert.assertEquals(2, (codeChallange.numberOfChain(123456789)));
+		Assert.assertEquals(2, (codeChallange.numberOfChain(444)));
+		Assert.assertEquals(4, (codeChallange.numberOfChain(1234)));
 	}
 
 	@AfterClass

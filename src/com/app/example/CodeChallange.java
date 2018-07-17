@@ -12,7 +12,7 @@ public class CodeChallange {
 		int descendingNumber = sortNumberInDesendingOrder(number);
 		int ascendingNumber = sortNumberInAsendingOrder(number);
 
-		while (!(set.size() == chain)) {
+		while (set.size() != chain) {
 			int result = descendingNumber - ascendingNumber;
 			descendingNumber = sortNumberInDesendingOrder(result);
 			ascendingNumber = sortNumberInAsendingOrder(result);
@@ -32,8 +32,6 @@ public class CodeChallange {
 
 	public int sortNumberInAsendingOrder(int number) {
 		
-		char[] ch = Integer.toString(number).toCharArray();
-		Arrays.sort(ch);
 		return Integer.parseInt(new StringBuffer(Integer.toString(sortNumberInDesendingOrder(number))).reverse().toString());
 	}
 
