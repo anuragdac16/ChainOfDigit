@@ -1,5 +1,6 @@
 package com.app.example.test;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,21 +17,6 @@ public class CodeChallangeTest {
 	}
 	
 	@Test
-	public void testSingleValue() {
-		Assert.assertEquals(2, codeChallange.numberOfChain(1));
-	}
-	
-	@Test
-	public void testDoubleDigits() {
-		Assert.assertEquals(2, codeChallange.numberOfChain(11));
-	}
-	
-	@Test
-	public void testDifferentDoubleDigits() {
-		Assert.assertEquals(3, codeChallange.numberOfChain(12));
-	}
-	
-	@Test
 	public void testSortNumberInAsendingOrder() {
 		Assert.assertEquals(1234, codeChallange.sortNumberInAsendingOrder(2314));
 	}
@@ -42,11 +28,17 @@ public class CodeChallangeTest {
 	@Test
 	public void testNumberOfChain() {
 
-		Assert.assertEquals(2, codeChallange.numberOfChain(123456789));
-		Assert.assertEquals(2, codeChallange.numberOfChain(444));
-		Assert.assertEquals(4, codeChallange.numberOfChain(1234));
+	
+		Assert.assertNotNull(codeChallange.numberOfChain(1234));
+		Assert.assertEquals(2, (codeChallange.numberOfChain(123456789).size()+1));
+		Assert.assertEquals(2, (codeChallange.numberOfChain(444).size()+1));
+		Assert.assertEquals(4, (codeChallange.numberOfChain(1234).size()+1));
 	}
 
+	@AfterClass
+	public static void destroy() {
+		codeChallange = null;
+	}
 	
 
 }

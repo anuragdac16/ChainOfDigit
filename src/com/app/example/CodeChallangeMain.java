@@ -8,6 +8,7 @@ public class CodeChallangeMain {
 
 	public static void main(String[] args) {
 
+		
 		printDetail();
 	}
 
@@ -17,19 +18,21 @@ public class CodeChallangeMain {
 		System.out.print("Enter number		:	");
 		int number = scan.nextInt();
 
+		// Printing first line on console
 		System.out.println(challange.sortNumberInDesendingOrder(number) + " - "
 				+ challange.sortNumberInAsendingOrder(number) + " = "
 				+ (challange.sortNumberInDesendingOrder(number) - challange.sortNumberInAsendingOrder(number)));
 
 		Set<Integer> set = challange.numberOfChain(number);
 		Iterator<Integer> itr = set.iterator();
+		// Printing remaining line on console
 		while (itr.hasNext()) {
 			Integer integer = (Integer) itr.next();
-			
+
 			System.out.println(challange.sortNumberInDesendingOrder(integer) + " - "
 					+ challange.sortNumberInAsendingOrder(integer) + " = "
 					+ (challange.sortNumberInDesendingOrder(integer) - challange.sortNumberInAsendingOrder(integer)));
-		
+
 		}
 		System.out.println("chain length	:	" + (set.size() + 1));
 

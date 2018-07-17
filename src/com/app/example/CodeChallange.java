@@ -31,12 +31,10 @@ public class CodeChallange {
 	}
 
 	public int sortNumberInAsendingOrder(int number) {
+		
 		char[] ch = Integer.toString(number).toCharArray();
 		Arrays.sort(ch);
-		return Integer.parseInt(String.copyValueOf(ch));
-
+		return Integer.parseInt(new StringBuffer(Integer.toString(sortNumberInDesendingOrder(number))).reverse().toString());
 	}
-
-	
 
 }
